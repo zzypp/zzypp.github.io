@@ -1,0 +1,23 @@
+* {
+    color: white;
+    font-family: courier;
+    font-size: 12px;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+button {
+    background-color: darkred;
+    border: white;
+}
+
+.center {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

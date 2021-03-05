@@ -1,0 +1,36 @@
+<html>
+    <head>
+	<link rel="icon" type="image/x-icon" href="media/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Ducky</title>
+        <script>
+            var pressed = false;
+
+            window.addEventListener('load', function() {
+                var pntBtn = document.getElementById('pntBtn');
+                var pntVid = document.getElementById('pntVid');
+            });
+
+            function pnt() {
+                if(pressed) {
+                    pntBtn.innerText = 'gib pees plz';
+                    pntVid.muted = true;
+                    pressed = false;
+                } else {
+                    pntBtn.innerText = 'ok im gud';
+                    pntVid.muted = false;
+                    pntVid.volume = 0.2;
+                    pressed = true;
+                }
+            }
+        </script>
+    </head>
+
+    <body class="index">
+        <div class="center">
+            <p>website under construction</p><br>
+            <video id="pntVid" autoplay loop muted onload="" playsinline src="media/peaceandtranquility.mp4" style="border-radius:72px; height:288px;" type="video/mp4"></video><br><br><br>
+            <button id="pntBtn" onclick="pnt();">gib pees plz</button>
+        </div>
+    </body>
+</html>

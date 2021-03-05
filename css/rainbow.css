@@ -1,0 +1,66 @@
+:root {
+    --rainbowLength: 256px;
+    --rainbowSpeed: 1s;
+}
+
+@-webkit-keyframes rainbowFade {
+    00.00% {color: rgb(255, 0, 0);}
+    16.66% {color: rgb(255, 255, 0);}
+    33.33% {color: rgb(0, 255, 0);}
+    50.00% {color: rgb(0, 255, 255);}
+    66.66% {color: rgb(0, 0, 255);}
+    83.33% {color: rgb(255, 0, 255);}
+    100.0% {color: rgb(255, 0, 0);}
+}
+@keyframes rainbowFade {
+    00.00% {color: rgb(255, 0, 0);}
+    16.66% {color: rgb(255, 255, 0);}
+    33.33% {color: rgb(0, 255, 0);}
+    50.00% {color: rgb(0, 255, 255);}
+    66.66% {color: rgb(0, 0, 255);}
+    83.33% {color: rgb(255, 0, 255);}
+    100.0% {color: rgb(255, 0, 0);}
+}
+
+@-webkit-keyframes rainbowScroll{
+    from{background-position: 0%;}
+    to{background-position: calc(var(--rainbowLength) * -1);}
+}
+@keyframes rainbowScroll{
+    from{background-position: 0%;}
+    to{background-position: calc(var(--rainbowLength) * -1);}
+}
+
+.rainbowFade {
+    -webkit-animation: rainbowFade var(--rainbowSpeed) linear infinite;
+    animation: rainbowFade var(--rainbowSpeed) linear infinite;
+}
+
+.rainbowScroll {
+    -webkit-animation: rainbowScroll var(--rainbowSpeed) linear infinite;
+    animation: rainbowScroll var(--rainbowSpeed) linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: -webkit-gradient(
+        linear, left top, right top,
+        color-stop(0,#f00),
+        color-stop(0.17,#ff0),
+        color-stop(0.33,#0f0),
+        color-stop(0.50,#0ff),
+        color-stop(0.67,#00f),
+        color-stop(0.83,#f0f),
+        color-stop(1.00,#f00)
+    );
+    background-image: gradient(
+        linear, left top, right top,
+        color-stop(0,#f00),
+        color-stop(0.17,#ff0),
+        color-stop(0.33,#0f0),
+        color-stop(0.50,#0ff),
+        color-stop(0.67,#00f),
+        color-stop(0.83,#f0f),
+        color-stop(1.00,#f00)
+    );
+    background-size: var(--rainbowLength) 100%;
+    color:transparent;
+}

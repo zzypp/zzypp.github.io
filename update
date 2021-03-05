@@ -1,0 +1,11 @@
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git gc --prune=now
+git gc --aggressive --prune=now
+git clean -f -x
+git checkout --orphan TEMP_BRANCH
+git add -A
+git commit -am "Updated site via CLI script"
+git branch -D master
+git branch -m master
+git push -f origin master
